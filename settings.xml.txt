@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<settings>
+  <localRepository>D:\gm00512957\.m2\repository</localRepository>
+  <interactiveMode>false</interactiveMode>
+  <mirrors>
+    <mirror>
+      <id>snapshots</id>
+      <mirrorOf>snapshots</mirrorOf>
+      <name>Nexu MavenCentral repository</name>
+      <url>https://repo1.maven.org/maven2</url>
+    </mirror>
+    <mirror>
+      <id>central</id>
+      <mirrorOf>central</mirrorOf>
+      <name>Nexus MavenCentral repository</name>
+      <url>https://repo1.maven.org/maven2</url>
+    </mirror>
+  </mirrors>
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <repositories>
+       <repository>
+         <id>central</id>         <url>https://repo1.maven.org/maven2</url>
+         <releases>
+              <enabled>true</enabled>
+              <updatePolicy>never</updatePolicy>
+         </releases>
+         <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+       </repository>
+      </repositories>
+       <pluginRepositories>
+          <pluginRepository>
+             <id>central</id>          <url>https://repo1.maven.org/maven2</url>
+             <releases><enabled>true</enabled></releases>
+             <snapshots><enabled>true</enabled></snapshots>
+          </pluginRepository>
+       </pluginRepositories>
+    </profile>
+   </profiles>
+   <activeProfiles>
+     <activeProfile>nexus</activeProfile>
+   </activeProfiles>
+   <pluginGroups>
+       <pluginGroup>org.sonatype.plugins</pluginGroup>
+   </pluginGroups>
+</settings>
